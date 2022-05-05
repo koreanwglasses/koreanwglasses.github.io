@@ -6,9 +6,9 @@ import "@fontsource/metropolis/300.css";
 import "@fontsource/metropolis/400.css";
 import "@fontsource/metropolis/500.css";
 import "@fontsource/metropolis/700.css";
-import { ColumnFlex, Flex } from "./flex";
+import { FlexCol, Flex } from "./flex";
 import { NavBar } from "./navbar";
-import { PageProps } from "gatsby";
+import { Footer } from "./footer";
 
 const theme = createTheme({
   typography: { fontFamily: "Metropolis" },
@@ -31,9 +31,14 @@ export const Layout = ({ children }: PropsWithChildren<{}>) => (
     <CssBaseline />
     <Flex width="100%">
       <NavBar />
-      <ColumnFlex overflow="auto" px={1.5} flexGrow={1}>
-        <ColumnFlex maxWidth={"8.5in"}>{children}</ColumnFlex>
-      </ColumnFlex>
+      <FlexCol overflow="auto" px={1.5} flexGrow={1}>
+        <FlexCol height="100vh">
+          <FlexCol maxWidth={"8.5in"}>
+            {children}
+            <Footer />
+          </FlexCol>
+        </FlexCol>
+      </FlexCol>
     </Flex>
   </ThemeProvider>
 );

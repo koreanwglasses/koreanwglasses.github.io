@@ -1,5 +1,5 @@
 import React from "react";
-import { ColumnFlex } from "./flex";
+import { FlexCol } from "./flex";
 import { Link } from "./link";
 import { useLocation } from "@reach/router"
 
@@ -12,7 +12,7 @@ export const NavBar = () => {
   const location = useLocation();
 
   return (
-    <ColumnFlex
+    <FlexCol
       component="nav"
       width={300}
       borderRight={1}
@@ -33,6 +33,6 @@ export const NavBar = () => {
           <span style={{ userSelect: "none" }}>{" 〈"}</span>
         </Link>
       ))}
-    </ColumnFlex>
+    </FlexCol>
   );
 };
