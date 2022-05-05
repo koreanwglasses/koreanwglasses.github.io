@@ -53,7 +53,7 @@ function insertStyles(
   return style;
 }
 
-export function prepareHTML(
+export function stripHtml(
   html: string,
   filterProperties: (prop: string) => boolean
 ) {
