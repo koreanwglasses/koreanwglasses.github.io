@@ -19,7 +19,7 @@ export const Footer = () => {
 
   return (
     <FlexCol height="100px" alignItems="end">
-      <Flex component="hr" borderTop={1} width="100%" />
+      <Flex component="hr" borderTop={0.5} width="100%" />
       <Typography variant="caption">
         <Link
           href="https://github.com/koreanwglasses/koreanwglasses.github.io"
