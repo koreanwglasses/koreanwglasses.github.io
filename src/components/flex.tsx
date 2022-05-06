@@ -1,9 +1,16 @@
 import { Box, BoxProps } from "@mui/system";
-import React from "react";
+import React, { forwardRef, Ref } from "react";
 
-export const Flex = <D extends React.ElementType<any> = "div", P = {}>(
-  props: BoxProps<D, P>
-) => <Box display="flex" {...props} />;
-export const FlexCol = <D extends React.ElementType<any> = "div", P = {}>(
-  props: BoxProps<D, P>
-) => <Box display="flex" flexDirection="column" {...props} />;
+export const Flex = forwardRef(
+  <D extends React.ElementType<any> = "div", P = {}>(
+    props: BoxProps<D, P>,
+    ref: Ref<unknown>
+  ) => <Box display="flex" {...props} ref={ref} />
+);
+
+export const FlexCol = forwardRef(
+  <D extends React.ElementType<any> = "div", P = {}>(
+    props: BoxProps<D, P>,
+    ref: Ref<unknown>
+  ) => <Box display="flex" flexDirection="column" {...props} ref={ref} />
+);
