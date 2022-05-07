@@ -3,7 +3,7 @@ import * as React from "react";
 import { IconButton, Typography } from "@mui/material";
 import { Layout } from "../components/layout";
 import portrait from "../images/portrait.jpg";
-import { Flex, FlexCol } from "../components/flex";
+import { Flex, FlexCol, Img } from "../components/flex";
 import { Roulette } from "../components/roulette";
 import ReplayIcon from "@mui/icons-material/Replay";
 import { useLocalStorage } from "../components/local-storage";
@@ -11,28 +11,25 @@ import { useLocalStorage } from "../components/local-storage";
 const HomePage = () => {
   return (
     <Layout>
-      <main>
-        <title>Home - Fred Choi</title>
-        <Typography variant="h1" mt="25vh">
-          Fred Choi
-        </Typography>
-        <Typography variant="subtitle1">
-          Graduate Student Researcher @ University of Illinois at
-          Urbana-Champaign
-        </Typography>
+      <title>Home - Fred Choi</title>
+      <Typography variant="h1" mt="25vh">
+        Fred Choi
+      </Typography>
+      <Typography variant="subtitle1">
+        Graduate Student Researcher @ University of Illinois at Urbana-Champaign
+      </Typography>
 
-        <IAmA />
-        <Flex gap={2} width="100%">
-          <FlexCol flexGrow={1}>
-            <Typography variant="h6" component="p">
-              I am many things. Officially, I am a graduate student and social
-              computing researcher at UIUC studying for my PhD in computer
-              science.
-            </Typography>
-          </FlexCol>
-          <Flex component="img" src={portrait} height="6in" />
-        </Flex>
-      </main>
+      <IAmA />
+      <Flex gap={2} width="100%">
+        <FlexCol flexGrow={1}>
+          <Typography variant="h6" component="p">
+            I am many things. Officially, I am a graduate student and social
+            computing researcher at UIUC studying for my PhD in computer
+            science.
+          </Typography>
+        </FlexCol>
+        <Img src={portrait} sx={{ height: "6in" }} />
+      </Flex>
     </Layout>
   );
 };
@@ -64,7 +61,7 @@ const IAmA = () => {
   }, []);
 
   return (
-    <Flex fontSize="4em" ml="1.5em" mt="1em" mb=".5em">
+    <Flex fontSize="4em" mt="1em" mb=".5em" alignSelf="flex-end">
       {"I\xa0am\xa0a"}
       <Flex
         sx={{

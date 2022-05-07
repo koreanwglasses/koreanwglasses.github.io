@@ -1,16 +1,11 @@
-import { Box, BoxProps } from "@mui/system";
-import React, { forwardRef, Ref } from "react";
+import { Box } from "@mui/system";
+import { styled } from "@mui/material/styles";
 
-export const Flex = forwardRef(
-  <D extends React.ElementType<any> = "div", P = {}>(
-    props: BoxProps<D, P>,
-    ref: Ref<unknown>
-  ) => <Box display="flex" {...props} ref={ref} />
-);
+export const Flex = styled(Box)({ display: "flex" });
 
-export const FlexCol = forwardRef(
-  <D extends React.ElementType<any> = "div", P = {}>(
-    props: BoxProps<D, P>,
-    ref: Ref<unknown>
-  ) => <Box display="flex" flexDirection="column" {...props} ref={ref} />
-);
+export const FlexCol = styled(Box)({
+  display: "flex",
+  flexDirection: "column",
+});
+
+export const Img = styled("img")({ display: "flex" });

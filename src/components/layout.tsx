@@ -35,10 +35,12 @@ export const Layout = ({ children }: PropsWithChildren<{}>) => (
         <NavBar />
         <FlexCol overflow="auto" px={1.5} flexGrow={1}>
           <FlexCol height="100vh">
-            <FlexCol maxWidth={"9in"}>
-              {children}
-              <Footer />
-            </FlexCol>
+            <main>
+              <FlexCol maxWidth={"9in"}>
+                {children}
+                <Footer />
+              </FlexCol>
+            </main>
           </FlexCol>
         </FlexCol>
       </Flex>

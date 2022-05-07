@@ -3,7 +3,7 @@ import { Flex, FlexCol } from "./flex";
 import { Link } from "./link";
 import { useLocation } from "@reach/router";
 import { useLocalStorage } from "./local-storage";
-import { FormControlLabel, FormGroup, Switch } from "@mui/material";
+import { FormControlLabel, FormGroup } from "@mui/material";
 import { Android12Switch } from "./android-12-switch";
 
 const pages = [
