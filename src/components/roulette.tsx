@@ -88,7 +88,7 @@ export const Roulette = ({
         position="relative"
         style={{
           top,
-          transition: animState.state === "start" && transition,
+          ...(animState.state === "start" && { transition }),
         }}
       >
         {rotate(
@@ -97,7 +97,9 @@ export const Roulette = ({
               key={i}
               height={clientHeight}
               sx={{
-                userSelect: lnnr(target, childArray.length) !== i && "none",
+                ...(lnnr(target, childArray.length) !== i && {
+                  userSelect: "none",
+                }),
               }}
             >
               {child}
