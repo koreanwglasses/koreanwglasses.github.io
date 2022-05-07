@@ -43,6 +43,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@mui/system", "virtual:dc3fc578bfa5e06182a4d2be39ede0bc5b74940b1ffe0d70c26892ab140a4699787750fba175dc306292e80b4aa2c8c5f68c2a821e69b2c37e360c0dff36ff66#npm:5.6.4"],\
             ["@reach/router", "virtual:dc3fc578bfa5e06182a4d2be39ede0bc5b74940b1ffe0d70c26892ab140a4699787750fba175dc306292e80b4aa2c8c5f68c2a821e69b2c37e360c0dff36ff66#npm:1.3.4"],\
             ["@types/css", "npm:0.0.33"],\
+            ["@types/local-storage", "npm:2.0.0"],\
             ["@types/node", "npm:17.0.31"],\
             ["@types/node-fetch", "npm:2.6.1"],\
             ["@types/reach__router", "npm:1.3.10"],\
@@ -53,6 +54,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["gatsby-plugin-manifest", "virtual:dc3fc578bfa5e06182a4d2be39ede0bc5b74940b1ffe0d70c26892ab140a4699787750fba175dc306292e80b4aa2c8c5f68c2a821e69b2c37e360c0dff36ff66#npm:4.13.0"],\
             ["gatsby-source-filesystem", "virtual:dc3fc578bfa5e06182a4d2be39ede0bc5b74940b1ffe0d70c26892ab140a4699787750fba175dc306292e80b4aa2c8c5f68c2a821e69b2c37e360c0dff36ff66#npm:4.13.0"],\
             ["gh-pages", "npm:3.2.3"],\
+            ["local-storage", "npm:2.0.0"],\
             ["node-fetch", "virtual:dc3fc578bfa5e06182a4d2be39ede0bc5b74940b1ffe0d70c26892ab140a4699787750fba175dc306292e80b4aa2c8c5f68c2a821e69b2c37e360c0dff36ff66#npm:2.6.7"],\
             ["node-html-parser", "npm:5.3.3"],\
             ["react", "npm:18.1.0"],\
@@ -5795,6 +5797,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["@types/keyv", "npm:3.1.4"],\
             ["@types/node", "npm:17.0.31"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@types/local-storage", [\
+        ["npm:2.0.0", {\
+          "packageLocation": "./.yarn/cache/@types-local-storage-npm-2.0.0-6ad3fb1427-9a8fd94cea.zip/node_modules/@types/local-storage/",\
+          "packageDependencies": [\
+            ["@types/local-storage", "npm:2.0.0"],\
+            ["local-storage", "npm:2.0.0"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -14051,6 +14063,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["local-storage", [\
+        ["npm:2.0.0", {\
+          "packageLocation": "./.yarn/cache/local-storage-npm-2.0.0-534f2e3585-921f381caf.zip/node_modules/local-storage/",\
+          "packageDependencies": [\
+            ["local-storage", "npm:2.0.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["locate-path", [\
         ["npm:2.0.0", {\
           "packageLocation": "./.yarn/cache/locate-path-npm-2.0.0-673d28b0ea-02d581edbb.zip/node_modules/locate-path/",\
@@ -18461,6 +18482,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@mui/system", "virtual:dc3fc578bfa5e06182a4d2be39ede0bc5b74940b1ffe0d70c26892ab140a4699787750fba175dc306292e80b4aa2c8c5f68c2a821e69b2c37e360c0dff36ff66#npm:5.6.4"],\
             ["@reach/router", "virtual:dc3fc578bfa5e06182a4d2be39ede0bc5b74940b1ffe0d70c26892ab140a4699787750fba175dc306292e80b4aa2c8c5f68c2a821e69b2c37e360c0dff36ff66#npm:1.3.4"],\
             ["@types/css", "npm:0.0.33"],\
+            ["@types/local-storage", "npm:2.0.0"],\
             ["@types/node", "npm:17.0.31"],\
             ["@types/node-fetch", "npm:2.6.1"],\
             ["@types/reach__router", "npm:1.3.10"],\
@@ -18471,6 +18493,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["gatsby-plugin-manifest", "virtual:dc3fc578bfa5e06182a4d2be39ede0bc5b74940b1ffe0d70c26892ab140a4699787750fba175dc306292e80b4aa2c8c5f68c2a821e69b2c37e360c0dff36ff66#npm:4.13.0"],\
             ["gatsby-source-filesystem", "virtual:dc3fc578bfa5e06182a4d2be39ede0bc5b74940b1ffe0d70c26892ab140a4699787750fba175dc306292e80b4aa2c8c5f68c2a821e69b2c37e360c0dff36ff66#npm:4.13.0"],\
             ["gh-pages", "npm:3.2.3"],\
+            ["local-storage", "npm:2.0.0"],\
             ["node-fetch", "virtual:dc3fc578bfa5e06182a4d2be39ede0bc5b74940b1ffe0d70c26892ab140a4699787750fba175dc306292e80b4aa2c8c5f68c2a821e69b2c37e360c0dff36ff66#npm:2.6.7"],\
             ["node-html-parser", "npm:5.3.3"],\
             ["react", "npm:18.1.0"],\

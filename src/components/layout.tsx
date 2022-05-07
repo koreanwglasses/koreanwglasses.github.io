@@ -9,12 +9,13 @@ import "@fontsource/metropolis/700.css";
 import { FlexCol, Flex } from "./flex";
 import { NavBar } from "./navbar";
 import { Footer } from "./footer";
+import { LocalStorageProvider } from "./local-storage";
 
 const theme = createTheme({
   typography: { fontFamily: "Metropolis" },
   palette: {
-    primary: { main: "#888" },
-    secondary: { main: "#5bc" },
+    primary: { main: "#39b" },
+    secondary: { main: "#888" },
   },
 });
 
@@ -29,16 +30,18 @@ const theme = createTheme({
 export const Layout = ({ children }: PropsWithChildren<{}>) => (
   <ThemeProvider theme={theme}>
     <CssBaseline />
-    <Flex width="100%">
-      <NavBar />
-      <FlexCol overflow="auto" px={1.5} flexGrow={1}>
-        <FlexCol height="100vh">
-          <FlexCol maxWidth={"9in"}>
-            {children}
-            <Footer />
+    <LocalStorageProvider>
+      <Flex width="100%">
+        <NavBar />
+        <FlexCol overflow="auto" px={1.5} flexGrow={1}>
+          <FlexCol height="100vh">
+            <FlexCol maxWidth={"9in"}>
+              {children}
+              <Footer />
+            </FlexCol>
           </FlexCol>
         </FlexCol>
-      </FlexCol>
-    </Flex>
+      </Flex>
+    </LocalStorageProvider>
   </ThemeProvider>
 );

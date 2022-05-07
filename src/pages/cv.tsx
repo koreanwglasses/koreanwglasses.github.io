@@ -26,7 +26,7 @@ const CVPage = ({ data }: { data: { custom: { html: string } } }) => {
         <Box
           dangerouslySetInnerHTML={{ __html: data.custom.html }}
           sx={{
-            "& a": { color: (theme) => theme.palette.primary.main },
+            "& a": { color: (theme) => theme.palette.secondary.main },
             "& table": {
               width: "100%",
               marginBottom: 1,

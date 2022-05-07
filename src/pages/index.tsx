@@ -6,6 +6,7 @@ import portrait from "../images/portrait.jpg";
 import { Flex, FlexCol } from "../components/flex";
 import { Roulette } from "../components/roulette";
 import ReplayIcon from "@mui/icons-material/Replay";
+import { useLocalStorage } from "../components/local-storage";
 
 const HomePage = () => {
   return (
@@ -23,7 +24,11 @@ const HomePage = () => {
         <IAmA />
         <Flex gap={2} width="100%">
           <FlexCol flexGrow={1}>
-            <p></p>
+            <Typography variant="h6" component="p">
+              I am many things. Officially, I am a graduate student and social
+              computing researcher at UIUC studying for my PhD in computer
+              science.
+            </Typography>
           </FlexCol>
           <Flex component="img" src={portrait} height="6in" />
         </Flex>
@@ -45,6 +50,7 @@ const IAmA = () => {
 
   const [canReroll, setCanReroll] = useState(false);
   const [target, setTarget] = useState(0);
+  const localStorage = useLocalStorage();
 
   const roll = () => {
     setTarget((t) =>
@@ -54,7 +60,7 @@ const IAmA = () => {
   };
 
   useEffect(() => {
-    roll();
+    if (!localStorage("reduceMotion")) roll();
   }, []);
 
   return (

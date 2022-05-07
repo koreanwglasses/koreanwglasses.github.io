@@ -24,6 +24,7 @@ export const Footer = () => {
         <Link
           href="https://github.com/koreanwglasses/koreanwglasses.github.io"
           target="_blank"
+          color={"secondary"}
         >
           View source on GitHub
         </Link>
