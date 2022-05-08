@@ -24,11 +24,15 @@ export const useLocalStorage = () => {
 
   return function <K extends keyof Store>(key: K, value?: Store[K]): Store[K] {
     if (arguments.length === 1) {
-      return (window && (localStorage.get(key) as Store[K])) ?? state[key];
+      return (
+        (typeof window !== "undefined" &&
+          (localStorage.get(key) as Store[K])) ??
+        state[key]
+      );
     }
 
     if (arguments.length === 2) {
-      if (window) localStorage.set(key, value);
+      if (typeof window !== "undefined") localStorage.set(key, value);
       setState?.((state) => ({ ...state, [key]: value }));
       return value!;
     }
@@ -41,7 +45,7 @@ export const LocalStorageProvider = ({ children }: PropsWithChildren<{}>) => {
   const context = useState(defaults);
 
   useEffect(() => {
-    if (window) {
+    if (typeof window !== "undefined") {
       // Load from local storage if window is available (i.e. not SSR)
       const [, setState] = context;
       setState(
