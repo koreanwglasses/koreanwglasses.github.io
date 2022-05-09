@@ -5,7 +5,7 @@ import React, {
   useEffect,
   useState,
 } from "react";
-import { useClientHeight } from "../lib/use-client-height";
+import { useClientDims } from "../lib/use-client-dims";
 import { Flex, FlexCol } from "./flex";
 
 const TIMING_PARAM_A = 0.1;
@@ -22,32 +22,32 @@ function lnnr(n: number, m: number) {
   return r;
 }
 
-type AnimationState = "idle" | "start" | "active" | "end";
+type AnimationState = "ready" | "start" | "active" | "end";
 export const Roulette = ({
   children,
   height,
   target,
-  onReady,
+  onIdle: onIdle,
 }: PropsWithChildren<{
   height: CSSProperties["height"];
   target: number;
-  onReady?: () => void;
+  onIdle?: () => void;
 }>) => {
   const childArray = Children.toArray(children);
 
-  const [ref, clientHeight] = useClientHeight();
+  const [ref, { clientHeight, clientWidth }] = useClientDims();
   const [animState, setAnimState] = useState({
-    state: "idle" as AnimationState,
+    state: "ready" as AnimationState,
     t: 0,
     offset: Math.ceil(0 - childArray.length / 2) + 1,
     duration: INIT_DURATION,
   });
 
   useEffect(() => {
-    if (animState.state === "idle" && animState.t === target) {
-      onReady?.();
+    if (animState.state === "ready" && animState.t === target) {
+      onIdle?.();
       return;
-    } else if (animState.state === "idle" && animState.t !== target) {
+    } else if (animState.state === "ready" && animState.t !== target) {
       setAnimState((state) => ({
         ...state,
         t: state.t + Math.sign(target - state.t),
@@ -63,11 +63,13 @@ export const Roulette = ({
     } else if (animState.state === "end") {
       setAnimState((state) => ({
         ...state,
-        state: "idle",
+        state: "ready",
         offset: Math.ceil(state.t - childArray.length / 2) + 1,
       }));
     }
   }, [animState.state, target]);
+
+  const isIdle = animState.state === "ready" && animState.t === target;
 
   const y = TIMING_PARAM_B / Math.sqrt(1 - TIMING_PARAM_A ** 2);
   const x = TIMING_PARAM_A * y;
@@ -75,13 +77,17 @@ export const Roulette = ({
   const transition = `top ${animState.duration}ms cubic-bezier(${x},${y},${
     1 - x
   }, ${1 - y})`;
-
-  return (
-    <FlexCol
+  return isIdle && clientHeight && clientWidth ? (
+    <Flex height={clientHeight} width={clientWidth}>
+      {childArray[lnnr(target, childArray.length)]}
+    </Flex>
+  ) : (
+    <Flex
       height={height}
       ref={ref}
       sx={{
         overflowY: "clip",
+        userSelect: "none",
       }}
     >
       <FlexCol
@@ -93,21 +99,13 @@ export const Roulette = ({
       >
         {rotate(
           childArray.map((child, i) => (
-            <Flex
-              key={i}
-              height={clientHeight}
-              sx={{
-                ...(lnnr(target, childArray.length) !== i && {
-                  userSelect: "none",
-                }),
-              }}
-            >
+            <Flex key={i} height={clientHeight}>
               {child}
             </Flex>
           )),
           animState.offset
         )}
       </FlexCol>
-    </FlexCol>
+    </Flex>
   );
 };

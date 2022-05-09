@@ -45,7 +45,7 @@ const IAmA = () => {
     " musician",
   ];
 
-  const [canReroll, setCanReroll] = useState(false);
+  const [isRolling, setIsRolling] = useState(false);
   const [target, setTarget] = useState(0);
   const localStorage = useLocalStorage();
 
@@ -53,7 +53,7 @@ const IAmA = () => {
     setTarget((t) =>
       Math.floor(t - iams.length * 2 - iams.length * Math.random())
     );
-    setCanReroll(false);
+    setIsRolling(true);
   };
 
   useEffect(() => {
@@ -72,13 +72,13 @@ const IAmA = () => {
         <Roulette
           height="1.5em"
           target={target}
-          onReady={() => setCanReroll(true)}
+          onIdle={() => setIsRolling(false)}
         >
           {iams.map((iam) => iam.replaceAll(" ", "\xa0"))}
         </Roulette>
       </Flex>
       <IconButton
-        disabled={!canReroll}
+        disabled={isRolling}
         onClick={() => roll()}
         sx={{ transition: "opacity 0.5s", "&:disabled": { opacity: 0 } }}
       >
