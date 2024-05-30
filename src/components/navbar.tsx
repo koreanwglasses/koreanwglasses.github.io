@@ -37,7 +37,7 @@ export const NavBar = () => {
           <span style={{ userSelect: "none" }}>{" 〈"}</span>
         </Link>
       ))}
-      <Controls />
+      {/* <Controls /> */}
     </FlexCol>
   );
 };

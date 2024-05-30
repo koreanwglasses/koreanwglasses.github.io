@@ -19,13 +19,24 @@ const HomePage = () => {
         Graduate Student Researcher @ University of Illinois at Urbana-Champaign
       </Typography>
 
-      <IAmA />
+      {/* <IAmA /> */}
       <Flex gap={2} width="100%">
         <FlexCol flexGrow={1}>
           <Typography variant="h6" component="p">
-            I am many things. Officially, I am a graduate student and social
-            computing researcher at UIUC studying for my PhD in computer
-            science.
+            I am a graduate student and social computing researcher at UIUC
+            studying for my PhD in computer science. In my research, I am
+            studying how the design of interfaces impact user behavior online,
+            and redesigning social media interfaces for moderators and
+            end-users. Drawing on techniques from visualization, user-interface
+            design, and social computing, I am developing tools that integrate
+            modern techniques in machine learning and NLP to augment the
+            workflow of human moderators. I am exploring positive reinforcement
+            techniques for shaping and driving user behavior. And I am
+            reimagining the experience for end-users to better align with the
+            diversity of user needs. Ultimately, my goal is to advance our
+            understanding of how the design of social media platforms affect us
+            so that we can design better interfaces moving into the future of
+            the online world.
           </Typography>
         </FlexCol>
         <Img src={portrait} sx={{ height: "6in" }} />
